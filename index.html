@@ -1,0 +1,422 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kokoreççi Dursun Usta | Köz Ateşinden Süt Kuzu Kokoreç</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0a0a0c;
+    --card-bg: rgba(22, 22, 26, 0.85);
+    --card-solid: #16161a;
+    --accent-orange: #ff6b00;
+    --accent-gold: #ffa800;
+    --accent-red: #ff3b30;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow-orange: rgba(255, 107, 0, 0.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 90px;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-btn {
+    background: var(--accent-orange);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 4px 15px var(--glow-orange);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+
+  /* Hero Card - Dükkan Fotoğrafı Alanı */
+  .hero-card {
+    position: relative;
+    /* Dükkanınızın fotoğrafının yolunu 'dukkan-fotografi.jpg' yerine yazabilirsiniz */
+    background: linear-gradient(180deg, rgba(10,10,12,0.3) 0%, rgba(10,10,12,0.95) 100%), 
+                url('dukkan-fotografi.jpg') center/cover no-repeat;
+    border-radius: 28px;
+    padding: 50px 24px 30px 24px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+    margin-bottom: 28px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-gold);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .hero-card h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #ffffff 30%, #ffd000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #e65100 100%);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 6px 20px var(--glow-orange);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 32px 0 16px 4px;
+  }
+
+  /* Widget Scroll */
+  .widgets-scroll {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .widgets-scroll::-webkit-scrollbar { display: none; }
+
+  .widget-card {
+    min-width: 240px;
+    background: var(--card-solid);
+    border-radius: 22px;
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .widget-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--accent-red);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 10px;
+  }
+
+  .widget-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .widget-card p { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+  .widget-price { font-size: 18px; font-weight: 800; color: var(--accent-gold); }
+
+  /* Menu List */
+  .menu-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .menu-item {
+    background: var(--card-solid);
+    border-radius: 20px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .item-info h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .item-info p { font-size: 12px; color: var(--text-secondary); }
+  .item-price { font-size: 16px; font-weight: 800; color: var(--accent-gold); white-space: nowrap; }
+
+  /* Reviews */
+  .review-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+  }
+
+  .review-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .reviewer-name { font-size: 13px; font-weight: 700; color: var(--accent-gold); }
+  .stars { color: #ffcc00; font-size: 12px; }
+  .review-text { font-size: 13px; color: #d1d1d6; }
+
+  .info-card {
+    background: linear-gradient(135deg, #1c1c22 0%, #121216 100%);
+    border-radius: 24px;
+    padding: 22px;
+    border: 1px solid var(--border-color);
+    margin-top: 30px;
+  }
+
+  .info-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .info-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+
+  /* Bottom Bar */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(18, 18, 22, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-color);
+    padding: 12px 20px;
+    z-index: 1000;
+  }
+
+  .call-btn {
+    width: 100%;
+    background: #30d158;
+    color: #000;
+    text-align: center;
+    padding: 14px;
+    border-radius: 18px;
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(48, 209, 88, 0.3);
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-text">🔥 KOKOREÇÇİ DURSUN USTA</div>
+  <a href="tel:+902325028370" class="nav-btn">Sipariş Ver</a>
+</header>
+
+<div class="container">
+
+  <!-- Dükkan Fotoğrafı Arka Planı Alanı -->
+  <div class="hero-card">
+    <div class="hero-badge">İzmir Karabağlar</div>
+    <h1>KOKOREÇÇİ DURSUN USTA</h1>
+    <p>Köz ateşinde pişen özel süt kuzu kokoreç, taze İzmir söğüşü ve sıcak midye dolma keyfi.</p>
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">Menüyü İncele</a>
+      <a href="#iletisim" class="btn-secondary">Konum Getir</a>
+    </div>
+  </div>
+
+  <div class="section-title">⚡ Özel Fırsat Menüleri</div>
+  <div class="widgets-scroll">
+    <div class="widget-card">
+      <div class="widget-tag">POPÜLER</div>
+      <h3>Dursun Usta Menü</h3>
+      <p>3/4 Ekmek Süt Kuzu Kokoreç + Kutu İçecek</p>
+      <div class="widget-price">650 TL</div>
+    </div>
+    <div class="widget-card">
+      <div class="widget-tag">SPECIAL</div>
+      <h3>Küçük Boy Special</h3>
+      <p>Yarım Kokoreç + Tek Pide Söğüş + 15 Midye + İçecek</p>
+      <div class="widget-price">770 TL</div>
+    </div>
+    <div class="widget-card">
+      <div class="widget-tag">DOYURAN</div>
+      <h3>Doyuran Paket</h3>
+      <p>3 Adet Yarım Ekmek Kokoreç + 3 Adet Ayran</p>
+      <div class="widget-price">1.200 TL</div>
+    </div>
+  </div>
+
+  <div id="menu"></div>
+
+  <div class="section-title">🍢 Süt Kuzu Kokoreç</div>
+  <div class="menu-list">
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Çeyrek Ekmek Süt Kuzu Kokoreç</h4>
+        <p>Çıtır ekmek arası özel baharat dengesiyle</p>
+      </div>
+      <div class="item-price">270 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Yarım Ekmek Süt Kuzu Kokoreç 🔥</h4>
+        <p>Közde pişmiş geleneksel süt kuzu lezzeti</p>
+      </div>
+      <div class="item-price">425 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>3/4 Ekmek Süt Kuzu Kokoreç</h4>
+        <p>Bol malzemeli özel porsiyon</p>
+      </div>
+      <div class="item-price">550 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Tam Ekmek / Double Yarım</h4>
+        <p>Çift kat ekstra kokoreç lezzeti</p>
+      </div>
+      <div class="item-price">750 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Porsiyon Kokoreç (Tabakta)</h4>
+        <p>Közlenmiş domates, biber, soğan ve atom biber ile</p>
+      </div>
+      <div class="item-price">780 TL</div>
+    </div>
+  </div>
+
+  <div class="section-title">🌮 İzmir Söğüş & Midye Dolma</div>
+  <div class="menu-list">
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>İzmir Söğüş Dürüm ⭐</h4>
+        <p>Kuzu dil, yanak, beyin, taze yeşillik ve özel lavasında</p>
+      </div>
+      <div class="item-price">500 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Double Söğüş Dürüm</h4>
+        <p>Ekstra bol malzemeli İzmir söğüş dürüm</p>
+      </div>
+      <div class="item-price">800 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Sıcak Midye Dolma (500 gr.)</h4>
+        <p>Günlük taze, özel baharatlı İzmir midyesi</p>
+      </div>
+      <div class="item-price">350 TL</div>
+    </div>
+    <div class="menu-item">
+      <div class="item-info">
+        <h4>Sıcak Midye Dolma (1 kg.)</h4>
+        <p>Aile boyu sıcak taze midye dolma</p>
+      </div>
+      <div class="item-price">600 TL</div>
+    </div>
+  </div>
+
+  <div class="section-title">💬 Müşteri Değerlendirmeleri</div>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="reviewer-name">Ahsen T.</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="review-text">"Kokoreç çok taze ve lokum gibiydi, uzun zamandır İzmir'de böyle lezzet yememiştik. Ustanın eline sağlık!"</div>
+  </div>
+  <div class="review-card">
+    <div class="review-header">
+      <span class="reviewer-name">Murat K.</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="review-text">"Sadece kokoreç değil, söğüşleri ve sıcak midyeleri de muazzam. Gece geç saatte bile siparişimiz sıcacık geldi."</div>
+  </div>
+
+  <div id="iletisim" class="info-card">
+    <h3>📍 Adres ve Sipariş Bilgileri</h3>
+    <p><strong>Adres:</strong> Bahçelievler Mah. Ali Rıza Avni Bulvarı No: 52-54C (Üçyol Metro) Karabağlar / İzmir</p>
+    <p><strong>Sipariş Hattı:</strong> 0232 502 83 70</p>
+    <p><strong>Çalışma Saatleri:</strong> Gece geç saatlere kadar paket servis mevcuttur.</p>
+  </div>
+
+</div>
+
+<div class="bottom-bar">
+  <a href="tel:+902325028370" class="call-btn">
+    📞 Sıcak Sipariş Ver: 0232 502 83 70
+  </a>
+</div>
+
+</body>
+</html>
+
+<html>
+<head>
+<title>New File</title>
+</head>
+<body>
+<h1>Hello World</h1>
+</body>
+</html>
